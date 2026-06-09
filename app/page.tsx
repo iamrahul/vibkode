@@ -24,8 +24,10 @@ export default function Home() {
     <>
       {/* HERO */}
       <header className="hero">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/coconut.png" alt="" className="coconut" />
+        <div className="coconut-wrap">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/coconut.png" alt="" className="coconut" />
+        </div>
         <div className="wordmark">
           VIBE<span className="green">KODE</span>
         </div>
