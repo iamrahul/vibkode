@@ -548,9 +548,9 @@ nav .wrap {
 }
 
 .step-card .sc-body {
-  font-family: var(--font-plex), sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
+  font-family: var(--font-jersey), sans-serif;
+  font-size: 22px;
+  line-height: 1.4;
   color: #333;
   font-weight: 400;
 }
