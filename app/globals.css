@@ -536,13 +536,14 @@ nav .wrap {
 }
 
 .step-card .sc-title {
-  font-family: var(--label);
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 0.06em;
+  font-family: var(--font-jersey), sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--ink);
   margin-bottom: 14px;
+  line-height: 1.1;
 }
 
 .step-card .sc-body {
