@@ -43,6 +43,33 @@ export default function Home() {
           </div>
 
 
+          <div className="step-cards">
+            <div className="step-card">
+              <div className="sc-num">STEP 01</div>
+              <div className="sc-title">Register Free</div>
+              <p className="sc-body">
+                Sign up at vibekode.in before the deadline. Solo entries only —
+                one registration per person. Open to anyone in Kerala.
+              </p>
+            </div>
+            <div className="step-card">
+              <div className="sc-num">STEP 02</div>
+              <div className="sc-title">Build Your App</div>
+              <p className="sc-body">
+                On event day, pick a real classroom problem in Kerala and vibe
+                code your way to a working web app in 8 hours. Use any AI tool
+                you like.
+              </p>
+            </div>
+            <div className="step-card">
+              <div className="sc-num">STEP 03</div>
+              <div className="sc-title">Submit & Demo</div>
+              <p className="sc-body">
+                Submit your working URL by 6 PM. Shortlisted builders demo live
+                on stage in Kozhikode — winners announced the same evening.
+              </p>
+            </div>
+          </div>
         </div>
       </header>
 

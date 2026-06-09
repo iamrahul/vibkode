@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Press_Start_2P, Silkscreen, VT323 } from "next/font/google";
+import { Press_Start_2P, Silkscreen, VT323, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
 const pressStart2P = Press_Start_2P({
@@ -23,6 +23,13 @@ const vt323 = VT323({
   display: "swap",
 });
 
+const ibmPlexSans = IBM_Plex_Sans({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  variable: "--font-plex",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Vibekode 2026 — Kerala's vibe coding contest",
   description:
@@ -41,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pressStart2P.variable} ${silkscreen.variable} ${vt323.variable}`}
+      className={`${pressStart2P.variable} ${silkscreen.variable} ${vt323.variable} ${ibmPlexSans.variable}`}
     >
       <body>{children}</body>
     </html>
