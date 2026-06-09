@@ -332,16 +332,26 @@ nav .wrap {
   100% { transform: rotate(-10deg); }
 }
 
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
+
+.coconut-wrap {
+  position: absolute;
+  top: 50%;
+  right: 48px;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .coconut {
-  position: fixed;
-  bottom: 60px;
-  right: 32px;
-  width: clamp(100px, 12vw, 180px);
-  z-index: 55;
+  display: block;
+  width: clamp(120px, 13vw, 200px);
   animation: rock 1.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   transform-origin: center bottom;
   filter: drop-shadow(0 8px 0 rgba(0,0,0,0.35));
-  pointer-events: none;
 }
 
 @keyframes scroll {
