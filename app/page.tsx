@@ -35,7 +35,6 @@ function useCountdown(target: Date) {
 }
 
 export default function Home() {
-  const cd = useCountdown(EVENT_DATE);
   const tickerLine = TICKER_IDEAS.map((i) => (
     <span key={i}>{i}</span>
   ));
@@ -61,64 +60,6 @@ export default function Home() {
           </a>
         </div>
       </nav>
-
-      {/* HERO */}
-      <header className="hero">
-        <div className="wordmark">
-          VIBE<span className="green">KODE</span>
-        </div>
-        <p className="wordmark-sub">Kozhikode, 2026</p>
-        <p className="tagline">// kerala&apos;s vibe coding contest · 2026</p>
-
-        <div className="wrap">
-          {/* Countdown */}
-          <div className="count">
-            <div className="box">
-              <div className="n">{String(cd.days).padStart(2, "0")}</div>
-              <div className="l">Days</div>
-            </div>
-            <div className="box">
-              <div className="n">{String(cd.hours).padStart(2, "0")}</div>
-              <div className="l">Hours</div>
-            </div>
-            <div className="box">
-              <div className="n">{String(cd.minutes).padStart(2, "0")}</div>
-              <div className="l">Mins</div>
-            </div>
-            <div className="box">
-              <div className="n">{String(cd.seconds).padStart(2, "0")}</div>
-              <div className="l">Secs</div>
-            </div>
-          </div>
-          <div className="deadline">
-            Event day: <b>15 Aug 2026</b> · Kozhikode
-          </div>
-
-          <div className="cta-row">
-            <a className="btn btn-primary" href="#register">
-              REGISTER FREE →
-            </a>
-            <a className="btn btn-ghost" href="#prizes">
-              SEE THE PRIZES
-            </a>
-          </div>
-
-          <div className="stat-strip">
-            <div className="s">
-              <b>₹50K</b>
-              <span>Top Prize</span>
-            </div>
-            <div className="s">
-              <b>1 Day</b>
-              <span>Sprint</span>
-            </div>
-            <div className="s">
-              <b>Solo</b>
-              <span>Format</span>
-            </div>
-          </div>
-        </div>
-      </header>
 
       {/* ABOUT */}
       <section id="about">
