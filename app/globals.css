@@ -157,6 +157,12 @@ h3 {
   color: var(--ink);
 }
 
+.btn-disabled {
+  opacity: 0.45;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
 .btn-ghost {
   background: var(--white);
   color: var(--ink);
