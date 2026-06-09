@@ -294,6 +294,7 @@ nav .wrap {
   display: flex;
   align-items: center;
   height: 48px;
+  overflow: hidden;
 }
 
 .ticker-tag {

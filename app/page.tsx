@@ -16,8 +16,8 @@ const TICKER_IDEAS = [
 
 
 export default function Home() {
-  const tickerLine = TICKER_IDEAS.map((i) => (
-    <span key={i}>{i}</span>
+  const tickerContent = [...TICKER_IDEAS, ...TICKER_IDEAS].map((idea, idx) => (
+    <span key={idx}>{idea}</span>
   ));
 
   return (
@@ -84,8 +84,7 @@ export default function Home() {
         <div className="ticker-row">
           <div className="ticker-tag">BUILDING NOW</div>
           <div className="ticker-track">
-            {tickerLine}
-            {tickerLine}
+            {tickerContent}
           </div>
         </div>
       </div>
