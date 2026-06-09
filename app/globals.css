@@ -462,6 +462,20 @@ nav .wrap {
   margin-top: 12px;
 }
 
+/* ---- hero svg ---- */
+.hero-svg {
+  width: 100%;
+  margin-top: 48px;
+  line-height: 0;
+}
+
+.hero-svg svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: pixelated;
+}
+
 /* ---- step cards ---- */
 .step-cards {
   display: grid;
