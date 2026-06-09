@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  cursor: url("/cursor.png") 0 0, auto;
 }
 
 body {
@@ -49,7 +50,7 @@ summary,
 .prize,
 details summary,
 .nav-cta {
-  cursor: pointer;
+  cursor: url("/cursor.png") 0 0, pointer;
 }
 
 a {
