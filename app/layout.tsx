@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Press_Start_2P, Silkscreen, VT323, IBM_Plex_Sans } from "next/font/google";
+import { Press_Start_2P, Silkscreen, VT323, IBM_Plex_Sans, Jersey_20 } from "next/font/google";
 import "./globals.css";
 
 const pressStart2P = Press_Start_2P({
@@ -20,6 +20,13 @@ const vt323 = VT323({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-term",
+  display: "swap",
+});
+
+const jersey20 = Jersey_20({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-jersey",
   display: "swap",
 });
 
@@ -48,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pressStart2P.variable} ${silkscreen.variable} ${vt323.variable} ${ibmPlexSans.variable}`}
+      className={`${pressStart2P.variable} ${silkscreen.variable} ${vt323.variable} ${ibmPlexSans.variable} ${jersey20.variable}`}
     >
       <body>{children}</body>
     </html>
