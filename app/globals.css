@@ -132,8 +132,8 @@ h3 {
 
 /* ---- buttons ---- */
 .btn {
-  font-family: var(--pixel);
-  font-size: 13px;
+  font-family: var(--font-jersey), sans-serif;
+  font-size: 22px;
   line-height: 1;
   display: inline-block;
   padding: 18px 26px;
@@ -277,11 +277,12 @@ nav .wrap {
 }
 
 .tagline {
-  font-family: var(--term);
-  font-size: 24px;
+  font-family: var(--font-jersey), sans-serif;
+  font-size: 32px;
   color: var(--green);
   margin-top: 26px;
   letter-spacing: 0.04em;
+  line-height: 1;
 }
 
 /* ticker */
