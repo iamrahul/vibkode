@@ -20,15 +20,54 @@ export default function Home() {
   const wordmarkRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const COLORS = ["#00ff00", "#ffffff", "#2621F3", "#00ff00", "#000000"];
+
+    const burst = (x: number, y: number, count = 5) => {
+      for (let i = 0; i < count; i++) {
+        const px = document.createElement("div");
+        const size = Math.random() * 5 + 3;
+        const angle = (i / count) * 2 * Math.PI + Math.random() * 0.5;
+        const dist = Math.random() * 36 + 16;
+        const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+        px.style.cssText = `
+          position:fixed;left:${x}px;top:${y}px;
+          width:${size}px;height:${size}px;background:${color};
+          pointer-events:none;z-index:9999;
+          outline:1.5px solid #000;will-change:transform,opacity;
+        `;
+        document.body.appendChild(px);
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            px.style.transition = "transform 0.36s cubic-bezier(.2,.8,.4,1),opacity 0.36s ease";
+            px.style.transform = `translate(${Math.cos(angle) * dist}px,${Math.sin(angle) * dist}px)`;
+            px.style.opacity = "0";
+          });
+        });
+        setTimeout(() => px.remove(), 400);
+      }
+    };
+
+    // Load bursts above wordmark
+    const introY = window.innerHeight * 0.18;
+    [0, 80, 160, 260, 380, 500].forEach((delay) => {
+      setTimeout(() => {
+        burst(window.innerWidth * (0.15 + Math.random() * 0.7), introY + (Math.random() - 0.5) * 60, 9);
+      }, delay);
+    });
+
+    const onClick = (e: MouseEvent) => burst(e.clientX, e.clientY, 7);
+    window.addEventListener("click", onClick);
+    return () => window.removeEventListener("click", onClick);
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => {
       const el = wordmarkRef.current;
       if (!el) return;
       const progress = Math.min(window.scrollY / (window.innerHeight * 0.6), 1);
       const scale = 1 + progress * 1.8;
       const translateY = progress * -120;
-      const opacity = 1 - progress * 1.4;
       el.style.transform = `scale(${scale}) translateY(${translateY}px)`;
-      el.style.opacity = String(Math.max(0, opacity));
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -42,10 +81,6 @@ export default function Home() {
     <>
       {/* HERO */}
       <header className="hero">
-        <div className="coconut-wrap">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/coconut.png" alt="" className="coconut" />
-        </div>
         <div className="wordmark" ref={wordmarkRef} style={{ willChange: "transform, opacity", transformOrigin: "center top" }}>
           VIBE<span className="green">KODE</span>
         </div>
