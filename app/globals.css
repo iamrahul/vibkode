@@ -158,7 +158,6 @@ h3 {
 }
 
 .btn-disabled {
-  opacity: 0.45;
   cursor: not-allowed !important;
   pointer-events: none;
 }
@@ -287,15 +286,7 @@ nav .wrap {
 
 /* ticker */
 .ticker {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 60;
-  border-top: 3px solid var(--ink);
-  background: var(--blue-deep);
-  overflow: hidden;
-  padding: 6px 0 4px;
+  display: none;
 }
 
 .ticker-tag {
