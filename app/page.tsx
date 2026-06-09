@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 
 const TICKER_IDEAS = [
   "malayalam spelling game for class 4",
@@ -16,6 +17,23 @@ const TICKER_IDEAS = [
 
 
 export default function Home() {
+  const wordmarkRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = wordmarkRef.current;
+      if (!el) return;
+      const progress = Math.min(window.scrollY / (window.innerHeight * 0.6), 1);
+      const scale = 1 + progress * 1.8;
+      const translateY = progress * -120;
+      const opacity = 1 - progress * 1.4;
+      el.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+      el.style.opacity = String(Math.max(0, opacity));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const tickerContent = [...TICKER_IDEAS, ...TICKER_IDEAS].map((idea, idx) => (
     <span key={idx}>{idea}</span>
   ));
@@ -28,7 +46,7 @@ export default function Home() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/coconut.png" alt="" className="coconut" />
         </div>
-        <div className="wordmark">
+        <div className="wordmark" ref={wordmarkRef} style={{ willChange: "transform, opacity", transformOrigin: "center top" }}>
           VIBE<span className="green">KODE</span>
         </div>
         <p className="wordmark-sub">Kozhikode, 2026</p>
