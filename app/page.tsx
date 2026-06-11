@@ -402,6 +402,7 @@ export default function Home() {
       <footer className="site-footer">
         <p className="site-footer-main">This website is vibekoded. No code written by hand.</p>
         <p className="site-footer-copy">© 2026 Vibekode. All rights reserved.</p>
+        <div className="footer-wordmark">naattilevideya</div>
       </footer>
 
       {/* TICKER */}
